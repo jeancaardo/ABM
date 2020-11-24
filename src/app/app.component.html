@@ -1,0 +1,13 @@
+<div style="position: absolute; width: 99%;">
+  <mat-card>
+    <button mat-flat-button color="primary" (click)="mostrarFormAgregar()"> Añadir Contacto </button>
+  </mat-card>
+  <mat-card>
+  <app-lista-contactos [contactos]="arrayDeContactos"
+    (eliminar)="eliminarDeTabla($event)" (modificar)="mostrarFormModificar($event)"></app-lista-contactos>
+  </mat-card>
+</div>
+
+<app-crear-contacto (agregar)="agregarATabla()"></app-crear-contacto>
+
+<router-outlet></router-outlet>

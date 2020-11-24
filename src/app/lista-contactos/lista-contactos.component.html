@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="dataSourceContactos" class="mat-elevation-z8">
+    <ng-container cdkColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element[1]}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="apellido">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
+      <td mat-cell *matCellDef="let element"> {{element[2]}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="direccion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Direccion </th>
+      <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="modificar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Eliminar </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-flat-button color="accent" (click)="modificarContacto(element)">Modificar</button>
+        </td>
+    </ng-container>
+    <ng-container cdkColumnDef="eliminar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Eliminar </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-flat-button color="warn" (click)="eliminarContacto(element)">Eliminar</button>
+        </td>
+    </ng-container>
+
+    <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

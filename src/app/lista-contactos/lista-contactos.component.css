@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  width: 20%;
+  height: 50px;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+}
+
+button{
+  margin: 3px 0;
+}
+

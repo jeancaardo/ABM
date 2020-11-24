@@ -1,0 +1,31 @@
+<div class="main-div" *ngIf="mostrarForm == true">
+  <div class="position-fixed">
+  <mat-card class="custom">
+    <button class="exit" (click)="cerrarFormAgregar()">X</button>
+    <mat-card-title>
+      <p>{{titulo}} Contacto</p>
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="contactoForm">
+        <div class="row">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Nombre" formControlName="nombre" [(ngModel)]='nombre'>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Apellido" formControlName="apellido" [(ngModel)]='apellido'>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Direccion" formControlName="direccion" [(ngModel)]='direccion'>
+        </mat-form-field>
+      </div>
+        <button type="submit" mat-flat-button color="primary"  (click)="emitAgregar()">{{titulo}}</button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>
